@@ -1,0 +1,41 @@
+#include "INT.h"
+
+void INT0_init(void)
+{
+	CLR_BIT(SREG_R,I_BIT);
+	CLR_BIT(DDRD,PD2);
+	SET_BIT(PORTD,PD2);
+	SET_BIT(GICR_R,INT0_BIT);
+	MCUCR |=(INT0_TRIGGER<<0);
+	SET_BIT(SREG_R,I_BIT);
+}
+void INT1_init(void)
+{
+	CLR_BIT(SREG_R,I_BIT);
+	CLR_BIT(DDRD,PD3);
+	SET_BIT(PORTD,PD3);
+	SET_BIT(GICR_R,INT1_BIT);
+	MCUCR |=(INT1_TRIGGER<<2);
+	SET_BIT(SREG_R,I_BIT);
+}
+void INT2_init(void)
+{
+	CLR_BIT(SREG_R,I_BIT);
+	CLR_BIT(DDRB,PB2);
+	SET_BIT(PORTB,PB2);
+	SET_BIT(GICR_R,INT2_BIT);
+	MCUCR |=(INT2_TRIGGER<<2);
+	SET_BIT(SREG_R,I_BIT);
+}
+void EXTI_init(void)
+{
+#if INT0_MODE == ENABLE
+	INT0_init();
+#endif
+#if INT1_MODE == ENABLE
+	INT1_init();
+#endif
+#if INT2_MODE == ENABLE
+	INT2_init();
+#endif
+}

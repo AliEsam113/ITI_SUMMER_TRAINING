@@ -1,0 +1,3 @@
+C:/Users/user/Desktop/7_SEGMENT/cmake-build-debug/CMakeFiles/7_SEGMENT.dir
+C:/Users/user/Desktop/7_SEGMENT/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/user/Desktop/7_SEGMENT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
